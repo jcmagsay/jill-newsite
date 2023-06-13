@@ -19,8 +19,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start:server": "node src/server/server.js",
-    "heroku-postbuild": "cd app && yarn && yarn build",
+    "heroku-postbuild": "cd app && yarn && yarn build && yarn global add serve && serve -s build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
