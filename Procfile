@@ -1,1 +1,1 @@
-web: yarn start
+web: cd app/ && yarn start
