@@ -1,1 +1,1 @@
-web: cd app/ && yarn build
+web: cd app/ && yarn && yarn build
