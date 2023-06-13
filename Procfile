@@ -1,1 +1,5 @@
-web: cd app/ && yarn start
+web:
+  cd app/ &&
+  yarn build &&
+  yarn install -g serve
+  serve -s build
