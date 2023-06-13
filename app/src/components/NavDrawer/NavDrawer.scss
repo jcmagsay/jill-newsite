@@ -1,0 +1,71 @@
+@import '../../styles/globals/colors';
+@import '../../styles/globals/resolutions';
+@import '../../styles/functions/breakpoints';
+
+/* ------------------------------------
+ NAV DRAWER STYLES
+--------------------------------------- */
+
+.nav-drawer {
+  background: $COLOR_DARKEST;
+  bottom: 0;
+  color: $COLOR_LIGHTEST;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.1;
+  position: fixed;
+  right: 2.4rem;
+  top: 2.4rem;
+  width: 100%;
+  transform-origin: top right;
+  transform: scale(0, 0) rotate(180deg);
+  transition: all 0.5s ease-out;
+  z-index: 24;
+}
+
+.nav-drawer--open {
+  opacity: 1;
+  top: 0;
+  right: 0;
+  transform: scale(1, 1) rotate(0deg);
+  ;
+}
+
+.nav-drawer__header {
+  background: $COLOR_GRAY;
+  display: flex;
+  height: 10rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.nav-drawer__list-item {
+  margin-top: 1.6rem;
+}
+
+.nav-drawer__link {
+  color: $COLOR_LIGHTEST;
+}
+
+.nav-drawer__link--active {
+  color: $COLOR_BLUE;
+}
+
+.nav-drawer__close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.6rem;
+  transition: all 0.5s 0.35s;
+  transform: scale(0, 0) rotate(0deg);
+}
+
+.nav-drawer__close--active {
+  transform: scale(1, 1) rotate(-90deg);
+}
+
+@include breakpoint($SCREEN_MD) {
+  .nav-drawer {
+    display: none;
+  }
+}

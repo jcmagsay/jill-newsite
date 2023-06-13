@@ -1,0 +1,58 @@
+@import '../../styles/globals/colors';
+@import '../../styles/globals/dp';
+@import '../../styles/globals/resolutions';
+@import '../../styles/functions/breakpoints';
+
+/* ------------------------------------
+ CARD STYLES
+--------------------------------------- */
+
+@mixin cardBase($minH, $w) {
+  min-height: #{$minH}rem;
+  width: #{$w}rem;
+}
+
+.card {
+  @include cardBase(20, 27.5);
+  border-radius: 0.2rem;
+  box-shadow: $DP4;
+  margin-bottom: 1.6rem;
+}
+
+.card__title {
+  background: $COLOR_BLUE;
+  border-radius: 0.2rem;
+  color: $COLOR_LIGHTEST;
+  padding: 1.6rem;
+}
+
+.card__supporting-text {
+  min-height: 15rem;
+  padding: 1.6rem;
+}
+
+.card__actions {
+  align-items: flex-end;
+  display: flex;
+  min-height: 9rem;
+  padding: 1.6rem;
+}
+
+/* ------------------------------------
+ CARD MIXIN STYLES
+--------------------------------------- */
+
+.card--centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ------------------------------------
+ MD RESOLUTION STYLES
+--------------------------------------- */
+
+@include breakpoint($SCREEN_MD) {
+  .card {
+    @include cardBase(10, 40);
+  }
+}
